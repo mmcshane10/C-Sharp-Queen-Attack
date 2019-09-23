@@ -17,17 +17,8 @@ class Queen
     string[] yCoord = {"A", "B", "C", "D", "E", "F", "G", "H"};
     int queenYInt = Array.IndexOf(yCoord, queenYPosition) + 1;
     int enemyYInt = Array.IndexOf(yCoord, enemyYPosition) + 1;
-    int slope = Math.Abs((queenYInt - enemyYInt) / (queenXInt - enemyXInt));
-
-    if (queenXInt == enemyXInt)
-    {
-      Console.WriteLine("You Can Attack!");
-    }
-    else if (queenYPosition == enemyYPosition)
-    {
-      Console.WriteLine("You Can Attack!");
-    }
-    else if (slope == 1)
+    
+    if (queenXInt == enemyXInt || queenYPosition == enemyYPosition || Math.Abs((queenYInt - enemyYInt) / (queenXInt - enemyXInt)) == 1)
     {
       Console.WriteLine("You Can Attack!");
     }
